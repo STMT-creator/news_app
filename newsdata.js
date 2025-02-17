@@ -1,4 +1,4 @@
-const myNews_api = "pub_69485d21d2aa89f2e84086c486cf73a8f8b6d";
+const myNews_api = "pub_69485981d44aab754852e8f074c2963a82de1";
 const query = "pizza";
 const url = "https://newsdata.io/api/1/latest"
 const request = `${url}?apikey=${myNews_api}&q=${query}`;
