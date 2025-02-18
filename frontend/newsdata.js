@@ -17,6 +17,6 @@ newsForm.addEventListener("submit", function(e){
 async function fetchNews(key) {
     // console.log(key + "를 입력했습니다.")
     const req_url = `${url}?apikey=${api_key}&q=${key})`
-    const jsonData = await fetch(req_url);
-    console.log(jsonData)
+    const response = await fetch(req_url);
+    console.log(response)
 }
