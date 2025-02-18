@@ -29,8 +29,13 @@ const newsForm = document.querySelector("#news_form");
 const key = document.querySelector("#keyword");
 newsForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    fetchNews();
-
+    if (key.value == ""){
+        alert("검색어를 입력해주세요")
+        key.focus();
+        return;
+    } else {
+        fetchNews();
+    }
 })
 
 async function fetchNews() {
@@ -41,21 +46,17 @@ async function fetchNews() {
     const news = await response.json();
     let results = news
     // console.log(results)
-    if (key.value == ""){
-        alert("검색어를 입력해주세요")
-        key.focus();
-        return;
-    } else if(key.value == "all") {
+    if(key.value == "all") {
         renderUI(results)
     } else {
         findNews(results, key.value);
     }
 }
 
-function findNews(results, key) {
+function findNews(results, kv) {
     const newsDiv = document.querySelector("#news");
-    // console.log(results, key)
-    let filts = results.filter((t) => t.title.toLowerCase().includes(`${key}`));
+    // console.log(results, kv)
+    let filts = results.filter((t) => t.title.toLowerCase().includes(`${kv}`));
     // console.log(filts)
     let templates = [];
     for (let filt of filts) {
