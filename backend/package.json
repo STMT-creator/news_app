@@ -4,15 +4,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx json"
+    "start": "json-server db.json"
   },
   "keywords": [
     "json server, news api"
   ],
   "author": "",
   "license": "ISC",
-  "description": "news api 실습을 위한 제이슨 서버 사용",
-  "devDependencies": {
-    "json-server": "^1.0.0-beta.3"
-  }
+  "description": "news api 실습을 위한 제이슨 서버 사용"
 }
